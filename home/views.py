@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from .models import Post, Comment, Vote
+from .models import Post, Comment, Vote, Writer
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from .forms import PostCreateUpdateForm, CommentCreateForm, CommentReplyForm, PostSearchForm
@@ -24,6 +24,20 @@ class HomeView(View):
 class AboutView(View):
 	def get(self,request,username):
 		return render(request,'home/home.html')
+
+
+class WriterView(LoginRequiredMixin,View):
+	def get(self,request):
+		writers = Writer.objects.all()
+		return render(request,'home/home.html')
+
+
+
+
+
+
+
+
 
 class PostDetailView(View):
 	form_class = CommentCreateForm

@@ -50,3 +50,11 @@ class Vote(models.Model):
 	def __str__(self):
 		return f'{self.user} liked {self.post.slug}'
 
+
+
+class Writer(models.Model):
+	first_name = models.CharField(max_length=100)
+	last_name = models.CharField(max_length=100)
+	email = models.EmailField()
+	country = models.CharField(max_length=100)
+
