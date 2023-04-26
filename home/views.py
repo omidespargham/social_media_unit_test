@@ -9,15 +9,21 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 
+# class HomeView(View):
+# 	form_class = PostSearchForm
+
+# 	def get(self, request):
+# 		posts = Post.objects.all()
+# 		if request.GET.get('search'):
+# 			posts = posts.filter(body__contains=request.GET['search'])
+# 		return render(request, 'home/index.html', {'posts':posts, 'form':self.form_class})
 class HomeView(View):
-	form_class = PostSearchForm
+	def get(self,request):
+		return render(request,'home/home.html')
 
-	def get(self, request):
-		posts = Post.objects.all()
-		if request.GET.get('search'):
-			posts = posts.filter(body__contains=request.GET['search'])
-		return render(request, 'home/index.html', {'posts':posts, 'form':self.form_class})
-
+class AboutView(View):
+	def get(self,request,username):
+		return render(request,'home/home.html')
 
 class PostDetailView(View):
 	form_class = CommentCreateForm
