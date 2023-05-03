@@ -39,6 +39,18 @@ class WriterView(LoginRequiredMixin,View):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 class PostDetailView(View):
 	form_class = CommentCreateForm
 	form_class_reply = CommentReplyForm

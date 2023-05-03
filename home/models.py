@@ -58,3 +58,6 @@ class Writer(models.Model):
 	email = models.EmailField()
 	country = models.CharField(max_length=100)
 
+
+	def __str__(self) -> str:
+		return f"{self.first_name} - {self.last_name}"
