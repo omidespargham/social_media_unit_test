@@ -29,9 +29,9 @@ class TestUserRegisterView(TestCase):
         self.assertFormError(form=response.context['form'],field='email',)
         
     
-# class TestWriterViews(TestCase):
-#     def setUp(self):
-#         User.objects.create_user(username="root",email="root@gmail.com",password="root1234")
-#         self.client = Client()
-#         self.client.login(username='root',email='root@gmail.com',password='root1234')
+class TestWriterViews(TestCase):
+    def setUp(self):
+        User.objects.create_user(username="root",email="root@gmail.com",password="root1234")
+        self.client = Client()
+        self.client.login(username='root',email='root@gmail.com',password='root1234')
     
