@@ -54,7 +54,7 @@ class BaseLoggingMixin:
 
                 }
             )
-            print(self.log)
+            # print(self.log)
             try:
                 
                 self.handle_log()

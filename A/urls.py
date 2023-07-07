@@ -7,3 +7,6 @@ urlpatterns = [
     path('account/', include('account.urls', namespace='account')),
     path("tracking/",include("tracking.urls",namespace="tracking"))
 ]
+
+
+
